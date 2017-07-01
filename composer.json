@@ -1,0 +1,5 @@
+{
+    "require": {
+        "broadway/broadway": "^1.0"
+    }
+}
