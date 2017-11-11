@@ -14,12 +14,12 @@
 
         ],
         "psr-4": {
-          "Eventful\\": "src"
+          "Eventful\\": "src/Eventful/"
         }
     },
     "autoload-dev": {
       "psr-4": {
-        "Eventful\\Test\\": "tests/Eventful"
+        "Eventful\\Test\\": "tests/Eventful/"
       }
     },
     "config": {
