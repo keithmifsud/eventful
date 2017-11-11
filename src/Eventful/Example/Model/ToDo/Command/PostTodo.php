@@ -14,13 +14,15 @@
  */
 
 
-namespace Eventful\Example\ToDo\Command;
+namespace Eventful\Example\Model\ToDo\Command;
+
+use Eventful\Example\Model\Common\Contracts\Command;
 
 
 /**
  * Example command class to post a ToDo.
  */
-final class PostTodo
+final class PostTodo implements Command
 {
 
     /**

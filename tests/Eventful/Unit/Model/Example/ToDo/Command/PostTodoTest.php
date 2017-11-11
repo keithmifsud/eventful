@@ -12,9 +12,9 @@
  * @version   1.0 Initial Release
  */
 
-namespace Eventful\Test\Unit\Example\ToDo\Command;
+namespace Eventful\Test\Unit\Example\Model\ToDo\Command;
 
-use Eventful\Example\ToDo\Command\PostTodo;
+use Eventful\Example\Model\ToDo\Command\PostTodo;
 use Eventful\Test\TestCase;
 
 

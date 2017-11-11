@@ -1,5 +1,4 @@
 <?php declare(strict_types=1);
-
 /**
  * This file is part of Eventful
  *
@@ -14,10 +13,19 @@
  */
 
 
-namespace Eventful\Example\ToDo\Handler;
+namespace Eventful\Example\Model\Common\Contracts;
 
-
-final class PostToDoHandler
+/**
+ * An example contract for a command handler.
+ */
+interface CommandHandler
 {
 
+
+    /**
+     * Handles the command.
+     *
+     * @param Command $command
+     */
+    public function handle(Command $command) : void;
 }
