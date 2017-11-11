@@ -1,19 +1,13 @@
 {
     "name": "swellphp/eventful",
-    "description": "The Eventful Framework.",
-    "keywords": ["framework", "eventful"],
+    "description": "The Eventful DDD, CQRS & ES Framework.",
+    "keywords": ["eventful", "event sourcing", "domain driven design", "ddd", "cqrs"],
     "license": "MIT",
-    "type": "project",
     "require": {
-        "php": ">=5.7",
-        "broadway/broadway": "^1.0"
+        "php": ">=7.1"
     },
     "require-dev": {
-        "fzaninotto/faker": "~1.4",
-        "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.0",
-        "symfony/css-selector": "3.1.*",
-        "symfony/dom-crawler": "3.1.*"
+        "phpunit/phpunit": "~5.0"
     },
     "autoload": {
         "classmap": [
@@ -27,19 +21,6 @@
       "psr-4": {
         "Eventful\\Test\\": "tests/Eventful"
       }
-    },
-    "scripts": {
-        "post-root-package-install": [
-            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
-        "post-create-project-cmd": [
-
-        ],
-        "post-install-cmd": [
-
-        ],
-        "post-update-cmd": [
-        ]
     },
     "config": {
         "preferred-install": "dist"
