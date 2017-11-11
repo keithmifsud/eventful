@@ -13,5 +13,8 @@
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
+    <logging>
+        <log type="coverage-php" target="build/cov/coverage.cov"/>
+    </logging>
 </phpunit>
 
