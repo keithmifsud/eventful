@@ -43,7 +43,9 @@ The framework should not be intrusive because most projects require custom imple
 
 ## Installation
 
-In progress.
+Via composer:
+
+`composer require swellphp/eventful`
 
 ## Documentation
 
