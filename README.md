@@ -23,7 +23,7 @@ The framework should not be intrusive because most projects require custom imple
 
 ## Components and features required for the initial release.
 
-- [ ] Installation via Composer. #GH-2
+- [x] Installation via Composer. #GH-2
 
 - [ ] Command Bus with Command Handling. #GH-3
 
