@@ -4,6 +4,10 @@ The aim of this project is to facilitate the development of PHP application usin
 
 It is not meant to be a one size fit all system and will possibly only be useful for developers wishing a quick start in learning these architectures.
 
+https://travis-ci.org/swellphp/eventful.svg?branch=master
+
+[![Coverage Status](https://coveralls.io/repos/github/swellphp/eventful/badge.svg?branch=master)](https://coveralls.io/github/swellphp/eventful?branch=master)
+
 ## Under Development
 
 This project is under initial development and should definitely not be used in any production systems.
