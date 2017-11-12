@@ -23,7 +23,7 @@ The framework should not be intrusive because most projects require custom imple
 
 - [x] Installation via Composer. #GH-2
 
-- [ ] Command Bus with Command Handling. #GH-3
+- [x] Commands and Command Handling. #GH-3
 
 - [ ] Event Bus, fire and subscribe. #GH-4
 
@@ -49,7 +49,9 @@ Via composer:
 
 ## Documentation
 
-In progress.
+- [Command Handling Documentation](https://github.com/swellphp/eventful/blob/master/src/Eventful/Command/README.md)
+
+Other components are in progress of being developed.
 
 ## Contributing
 
