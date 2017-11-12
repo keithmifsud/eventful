@@ -1,6 +1,6 @@
 # Eventful Command Component
 
-The command component of the Eventful DDD, CQRS & ES framework.
+The Command component of the Eventful DDD, CQRS & ES framework.
 
 ## Features
 
