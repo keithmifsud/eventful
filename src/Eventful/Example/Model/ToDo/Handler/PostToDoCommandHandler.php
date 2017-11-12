@@ -28,7 +28,6 @@ use Eventful\Example\Model\ToDo\ToDo;
 final class PostToDoCommandHandler implements CommandHandler
 {
 
-
     /**
      * Handles the command.
      *
