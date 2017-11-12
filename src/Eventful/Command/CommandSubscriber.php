@@ -23,9 +23,8 @@ use Eventful\Command\Exception\InvalidCommandHandler;
 /**
  * The command subscriber.
  *
- * @Todo implement an interface.
  */
-final class CommandSubscriber
+final class CommandSubscriber implements Subscriber
 {
 
     /**
