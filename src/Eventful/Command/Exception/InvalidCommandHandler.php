@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+
 /**
  * This file is part of Eventful
  *
@@ -13,13 +14,14 @@
  */
 
 
-namespace Eventful\Example\Model\Common\Contracts;
+namespace Eventful\Command\Exception;
+
+use Eventful\Common\Exception\Exception;
 
 /**
- * An example contract for a command.
- *
+ * Exception for invalid command handlers.
  */
-interface Command
+final class InvalidCommandHandler extends Exception
 {
 
 }

@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+
 /**
  * This file is part of Eventful
  *
@@ -13,19 +14,14 @@
  */
 
 
-namespace Eventful\Example\Model\Common\Contracts;
+namespace Eventful\Command\Exception;
+
+use Eventful\Common\Exception\Exception;
 
 /**
- * An example contract for a command handler.
+ * Exception for command handler not found.
  */
-interface CommandHandler
+final class CommandHandlerNotFound extends Exception
 {
 
-
-    /**
-     * Handles the command.
-     *
-     * @param Command $command
-     */
-    public function handle(Command $command) : void;
 }

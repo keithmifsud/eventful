@@ -14,28 +14,25 @@
  */
 
 
-namespace Eventful\Example\Model\ToDo\Handler;
+namespace Eventful\Test\Unit\Model\Command;
 
 use Eventful\Command\Command;
 use Eventful\Command\CommandHandler;
-use Eventful\Example\Model\ToDo\Command\PostTodo;
-use Eventful\Example\Model\ToDo\ToDo;
+
 
 /**
- * Example PostToDo command handler.
- *
+ * A command handler class for testing.
  */
-final class PostToDoCommandHandler implements CommandHandler
+class ValidCommandHandler implements CommandHandler
 {
-
 
     /**
      * Handles the command.
      *
-     * @param PostTodo $command
+     * @param Command $command
      */
     public function handle(Command $command) : void
     {
-        ToDo::post($command->getDescription());
+        
     }
 }

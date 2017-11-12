@@ -16,7 +16,7 @@
 
 namespace Eventful\Example\Model\ToDo\Command;
 
-use Eventful\Example\Model\Common\Contracts\Command;
+use Eventful\Command\Command;
 
 
 /**
