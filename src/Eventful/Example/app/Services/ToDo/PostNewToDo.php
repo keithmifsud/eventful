@@ -14,7 +14,7 @@
  */
 
 
-namespace Eventful\Example\app\Services\ToDo;
+namespace Eventful\Example\Application\Services\ToDo;
 
 use Eventful\Command\Bus;
 use Eventful\Example\Model\ToDo\Command\PostTodo;
