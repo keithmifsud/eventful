@@ -15,7 +15,7 @@
 namespace Eventful\Test\Unit\Example\Model\ToDo\Handler;
 
 use Eventful\Example\Model\ToDo\Command\PostTodo;
-use Eventful\Example\ToDo\Handler\PostToDoHandler;
+use Eventful\Example\Model\ToDo\Handler\PostToDoCommandHandler;
 use Eventful\Test\TestCase;
 
 /**
