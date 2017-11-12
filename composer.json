@@ -15,7 +15,8 @@
 
         ],
         "psr-4": {
-          "Eventful\\": "src/Eventful/"
+          "Eventful\\": "src/Eventful/",
+          "Eventful\\Example\\Application\\": "src/Eventful/Example/app/"
         }
     },
     "autoload-dev": {
