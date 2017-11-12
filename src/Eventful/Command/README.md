@@ -1,4 +1,4 @@
-# Eventful = Command Component
+# Eventful Command Component
 
 The command component of the Eventful DDD, CQRS & ES framework.
 
@@ -7,25 +7,10 @@ The command component of the Eventful DDD, CQRS & ES framework.
 - [x] Command Subscriber
 - [x] Command Bus
 - [x] Command Handling
-- [ ] Command Testing Helpers - ? In progress as events are needed to test.
+- [ ] Command Testing Helpers  (In progress as events are needed to test)
 
 
-## Bootstraping
-
-
-## Usage
-
-
-
-1) Create a command class which must implement the Command Interface.
-
-2) Create a command handler class which must implement the CommandHandler interface.
-
-3) When booting the application, instantiate the CommandSubscriber with an array of commands and handlers.
-
-4) When dispatching a command from an application service class, instantiate the CommandBus by passing the CommandSubscriber and call the dispatch method by passing a new instance of the Command to dispatch.
-
-### Examples
+## Usage Examples
 
 A simple "ToDo" model is included in this package to outline how to:
 
@@ -52,13 +37,23 @@ Depending on your application structure / framework, instantiate the `\Eventful\
 
 ___Similar to:___
 
-[Array of commands with handlers](https://github.com/swellphp/eventful/blob/master/src/Eventful/Example/config/eventful-commands.php_
+[Array of commands with handlers](https://github.com/swellphp/eventful/blob/master/src/Eventful/Example/config/eventful-commands.php)
 
 Then instantiate the `\Eventful\Command\CommandBus` by passing the `\Eventful\Command\CommandSubscriber` to it.
 
 ___Similar to:___
 
+[Bootstrap](https://github.com/swellphp/eventful/blob/master/src/Eventful/Example/app/bootstrap.php)
 
+and dispatch the command from your application service or controller.
+
+__Similar to:__
+
+[Application service](https://github.com/swellphp/eventful/blob/master/src/Eventful/Example/app/Services/ToDo/PostNewToDo.php)
 
 Simply call the `dispatch` method on the `\Eventful\Command\CommandBus` and pass it the command you wish to dispatch.
+
+## Testing
+
+Testing helpers will be included soon so that we can test that a command has triggered and recorded an event.
 
