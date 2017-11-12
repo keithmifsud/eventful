@@ -27,6 +27,7 @@ interface Subscriber
      * @param string $commandClassName
      * @return string
      */
-    public function getCommandHandlerClassName(string $commandClassName
-    ): string;
+    public function getCommandHandlerClassName(
+        string $commandClassName
+    ): string ;
 }

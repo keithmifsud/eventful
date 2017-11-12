@@ -1,5 +1,4 @@
 <?php declare(strict_types=1);
-
 /**
  * This file is part of Eventful
  *
@@ -14,16 +13,26 @@
  */
 
 
-namespace Eventful\Command\Exception;
-
-use Eventful\Common\Exception\Exception;
-
+namespace Eventful\Command;
 
 /**
- * Exception for calling a command which is either not registered or
- * does not exist.
+ * The command handler's contract.
+ *
  */
-final class CommandNotFound extends Exception
+interface HandlerWrapper
 {
 
+    /**
+     * Handles the command
+     *
+     */
+    public function handle() : void ;
+
+
+    /**
+     * Checks if the command is handled.
+     *
+     * @return bool
+     */
+    public function isHandled() : bool ;
 }

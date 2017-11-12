@@ -16,9 +16,10 @@
 
 namespace Eventful\Command;
 
-use Eventful\Command\Exception\CommandAlreadySubscribed;
 use Eventful\Command\Exception\InvalidCommand;
+use Eventful\Command\Exception\CommandNotFound;
 use Eventful\Command\Exception\InvalidCommandHandler;
+use Eventful\Command\Exception\CommandAlreadySubscribed;
 
 /**
  * The command subscriber.
@@ -50,9 +51,13 @@ final class CommandSubscriber implements Subscriber
      *
      * @param string $command
      * @return string
+     * @throws CommandNotFound
      */
     public function getCommandHandlerClassName(string $command) : string
     {
+        if (! array_key_exists($command, $this->commandsWithHandlers)) {
+            throw new CommandNotFound($command);
+        }
         return $this->commandsWithHandlers[$command];
     }
 

@@ -4,6 +4,7 @@ The command component of the Eventful DDD, CQRS & ES framework.
 
 ## Features
 
+- [x] Command Subscriber
 - [ ] Command Bus
 - [ ] Command Handling
 - [ ] Command Testing Helpers

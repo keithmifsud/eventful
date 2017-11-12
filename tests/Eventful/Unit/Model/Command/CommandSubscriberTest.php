@@ -71,8 +71,27 @@ class CommandSubscriberTest extends TestCase
         $subscriber = new CommandSubscriber($commandsWithHandlers);
 
         $this->assertEquals(
-            ValidCommandHandler::class,
-            $subscriber->getCommandHandlerClassName(ValidCommand::class)
+            PostToDoCommandHandler::class,
+            $subscriber->getCommandHandlerClassName(PostTodo::class)
+        );
+    }
+
+
+    /**
+     * Tests that an exception is thrown when attempting
+     * to get a command which is not subscribed.
+     *
+     * @test
+     * @expectedException \Eventful\Command\Exception\CommandNotFound
+     */
+    public function it_throws_exception_when_command_is_not_found()
+    {
+        $commandsWithHandlers = [
+            ValidCommand::class => ValidCommandHandler::class
+        ];
+        $subscriber = new CommandSubscriber($commandsWithHandlers);
+        $subscriber->getCommandHandlerClassName(
+            PostTodo::class
         );
     }
 
