@@ -14,18 +14,18 @@
 
 
 /**
- * An array of events with an array of subscribers.
+ * An array of events with an array of listeners.
  *
  * You should be able to place this file anywhere or not even need at
- * all. Provided you send an array of events and their subscribers to the
+ * all. Provided you send an array of events and their listeners to the
  * event bus constructor.
  */
 
-$eventsWithSubscribers = [
+$eventsWithListeners = [
 
     // Event => [
-    //  Subscriber,
-    //  Subscriber
+    //  Listener,
+    //  Listener
     //]
 
     \Eventful\Example\Model\ToDo\Event\ToDoWasPosted::class => [
@@ -37,4 +37,6 @@ $eventsWithSubscribers = [
         \Eventful\Example\Projection\Tasks\Listener\WhenToDoDescriptionIsChanged::class
     ]
 ];
+
+return $eventsWithListeners;
 

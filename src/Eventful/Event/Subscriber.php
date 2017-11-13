@@ -1,5 +1,4 @@
 <?php declare(strict_types=1);
-
 /**
  * This file is part of Eventful
  *
@@ -14,16 +13,20 @@
  */
 
 
-namespace Eventful\Example\Projection\Calendar\Listener;
-
-
-use Eventful\Event\Listener;
-
+namespace Eventful\Event;
 
 /**
- * An example event listener for when a to do is posted.
+ * The event subscriber interface.
  */
-final class WhenToDoIsPosted implements Listener
+interface Subscriber
 {
 
+
+    /**
+     * Gets the event listeners of an event.
+     *
+     * @param string $eventClassName
+     * @return array
+     */
+    public function getEventListenersClassNames(string $eventClassName) : array ;
 }

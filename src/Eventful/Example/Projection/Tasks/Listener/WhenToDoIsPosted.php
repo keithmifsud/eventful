@@ -17,12 +17,12 @@
 namespace Eventful\Example\Projection\Tasks\Listener;
 
 
-use Eventful\Event\Subscriber;
+use Eventful\Event\Listener;
 
 /**
  * Example of an event listener.
  */
-final class WhenToDoIsPosted implements Subscriber
+final class WhenToDoIsPosted implements Listener
 {
 
 }

@@ -14,16 +14,17 @@
  */
 
 
-namespace Eventful\Example\Projection\Calendar\Listener;
+namespace Eventful\Event\Exception;
 
 
-use Eventful\Event\Listener;
+use Eventful\Common\Exception\Exception;
 
 
 /**
- * An example event listener for when a to do is posted.
+ * Exception for when an event is not found.
+ *
  */
-final class WhenToDoIsPosted implements Listener
+final class EventNotFound extends Exception
 {
 
 }

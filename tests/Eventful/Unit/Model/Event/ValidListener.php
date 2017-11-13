@@ -14,16 +14,16 @@
  */
 
 
-namespace Eventful\Example\Projection\Calendar\Listener;
+namespace Eventful\Test\Unit\Model\Event;
 
 
 use Eventful\Event\Listener;
 
 
 /**
- * An example event listener for when a to do is posted.
+ * A valid event listener for testing.
  */
-final class WhenToDoIsPosted implements Listener
+final class ValidListener implements Listener
 {
 
 }

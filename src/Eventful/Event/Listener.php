@@ -16,9 +16,9 @@
 namespace Eventful\Event;
 
 /**
- * Contract for event subscribers.
+ * Contract for event listeners.
  */
-interface Subscriber
+interface Listener
 {
 
 }

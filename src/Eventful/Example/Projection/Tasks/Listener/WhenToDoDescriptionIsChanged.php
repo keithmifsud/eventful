@@ -17,14 +17,14 @@
 namespace Eventful\Example\Projection\Tasks\Listener;
 
 
-use Eventful\Event\Subscriber;
+use Eventful\Event\Listener;
 
 
 /**
  * An example event listener for when a to do description is changed.
- * 
+ *
  */
-final class WhenToDoDescriptionIsChanged implements Subscriber
+final class WhenToDoDescriptionIsChanged implements Listener
 {
 
 }
