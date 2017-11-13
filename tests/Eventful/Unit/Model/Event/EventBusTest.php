@@ -15,6 +15,7 @@
 namespace Eventful\Test\Unit\Model\Event;
 
 use Eventful\Event\EventBus;
+use Eventful\Event\EventSubscriber;
 use Eventful\Test\TestCase;
 
 
@@ -24,4 +25,35 @@ use Eventful\Test\TestCase;
 class EventBusTest extends TestCase
 {
 
+
+    /**
+     * It dispatches events.
+     *
+     * @test
+     */
+    public function it_dispatches_the_event()
+    {
+        $eventsWithListeners = [
+            ToDoWasPosted::class => [
+                \Eventful\Example\Projection\Tasks\Listener\WhenToDoIsPosted::class,
+                \Eventful\Example\Projection\Calendar\Listener\WhenToDoIsPosted::class
+            ],
+
+            \Eventful\Example\Model\ToDo\Event\ToDoDescriptionWasChanged::class => [
+                \Eventful\Example\Projection\Tasks\Listener\WhenToDoDescriptionIsChanged::class
+            ]
+        ];
+
+        $subscriber = new EventSubscriber($eventsWithListeners);
+        $bus = new EventBus($subscriber);
+
+        $bus->dispatch(new ValidEvent());
+
+        $this->assertTrue(empty($bus->getEventQueue()));
+        $this->assertTrue(empty($bus->getListenersQueue()));
+        $this->assertFalse($bus->isDispatching());
+    }
+
+
+    // test how many times a method is called.
 }

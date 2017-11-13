@@ -14,8 +14,10 @@ where to put event listeners?
 
 Handles the publishing of events to it's listeners and calls the handle method.
 
+- [ ] Event handling for entities and aggregates. use interface, base class and an adaptor in example.
 
-- [ ] Testing helpers using scenarios.
+
+- [ ] Testing helpers using scenarios. even command model.
 
 ## Usage Examples
 
