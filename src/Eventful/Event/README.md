@@ -10,13 +10,10 @@ Subscribes the events and their listeners.
 
 where to put event listeners?
 
-- [ ] Event Bus
+- [ ] Event Dispatcher
 
-Handles the publishing of events to it's subscribers.
+Handles the publishing of events to it's listeners and calls the handle method.
 
-- [ ] Event Handling
-
-Calls the event listener handle method.
 
 - [ ] Testing helpers using scenarios.
 
@@ -24,3 +21,5 @@ Calls the event listener handle method.
 
 ## Testing
 
+
+can do testing with recording events (traceable), should also work for commands.

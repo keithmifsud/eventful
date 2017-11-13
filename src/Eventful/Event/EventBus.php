@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+
 /**
  * This file is part of Eventful
  *
@@ -15,17 +16,13 @@
 
 namespace Eventful\Event;
 
+
 /**
- * Contract for event listeners.
+ * The event bus
+ *
+ * @todo interface-contract
  */
-interface Listener
+final class EventBus
 {
 
-
-    /**
-     * Handles the event listener's tasks.
-     *
-     * @param Event $event
-     */
-    public function handle(Event $event) : void ;
 }

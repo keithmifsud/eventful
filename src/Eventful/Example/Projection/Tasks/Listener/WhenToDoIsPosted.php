@@ -17,6 +17,7 @@
 namespace Eventful\Example\Projection\Tasks\Listener;
 
 
+use Eventful\Event\Event;
 use Eventful\Event\Listener;
 
 /**
@@ -25,4 +26,13 @@ use Eventful\Event\Listener;
 final class WhenToDoIsPosted implements Listener
 {
 
+    /**
+     * Handles the listener's tasks.
+     *
+     * @param Event $event
+     */
+    public function handle(Event $event) : void
+    {
+        // do something.
+    }
 }

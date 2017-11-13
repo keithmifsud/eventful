@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 /**
  * This file is part of Eventful
  *
@@ -12,20 +12,16 @@
  * @version   1.0 Initial Release
  */
 
+namespace Eventful\Test\Unit\Model\Event;
 
-namespace Eventful\Event;
+use Eventful\Event\EventBus;
+use Eventful\Test\TestCase;
+
 
 /**
- * Contract for event listeners.
+ * Tests for the event bus.
  */
-interface Listener
+class EventBusTest extends TestCase
 {
 
-
-    /**
-     * Handles the event listener's tasks.
-     *
-     * @param Event $event
-     */
-    public function handle(Event $event) : void ;
 }
