@@ -40,7 +40,7 @@ final class CommandBus implements Bus
 
 
     /**
-     * @var CommandSubscriber
+     * @var Subscriber
      */
     protected $subscriber;
 
@@ -48,9 +48,9 @@ final class CommandBus implements Bus
     /**
      * CommandBus constructor.
      *
-     * @param CommandSubscriber $subscriber
+     * @param Subscriber $subscriber
      */
-    public function __construct(CommandSubscriber $subscriber)
+    public function __construct(Subscriber $subscriber)
     {
         $this->setDispatching(false);
         $this->setQueue([]);
@@ -171,9 +171,9 @@ final class CommandBus implements Bus
     /**
      * Sets the Subscriber.
      *
-     * @param CommandSubscriber $subscriber
+     * @param Subscriber $subscriber
      */
-    protected function setSubscriber(CommandSubscriber $subscriber)
+    protected function setSubscriber(Subscriber $subscriber)
     {
         $this->subscriber = $subscriber;
     }
