@@ -22,9 +22,8 @@ use Eventful\Event\Exception\EventListenerNotFound;
 /**
  * The event bus
  *
- * @todo interface-contract
  */
-final class EventBus
+final class EventBus implements Bus
 {
 
     /**
@@ -65,11 +64,91 @@ final class EventBus
     }
 
 
-    public function dispatch(Event $event) : void
+    /**
+     * Dispatches the event.
+     *
+     * @param Event $event
+     * @throws \Exception
+     */
+    public function dispatch(Event $event): void
     {
         $this->setEventQueue([$event]);
 
+        if (!$this->isDispatching()) {
+            $this->setDispatching(true);
+        }
 
+        $eventName = get_class($event);
+
+        try {
+            $listeners = $this->subscriber->getEventListenersClassNames(
+                $eventName
+            );
+        } catch (\Exception $exception) {
+            $this->setDispatching(false);
+            throw $exception;
+        }
+
+        $this->setListenersQueue($listeners);
+
+        $index = 0;
+
+        foreach ($this->listenersQueue as $listener) {
+
+            $listenerClass = $this->getListenerClassInstance($listener);
+
+            $toHandle = new EventListenerWrapper(
+                $listenerClass,
+                $event
+            );
+
+            try {
+                $toHandle->handle();
+            } catch (\Exception $exception) {
+                $this->setDispatching(false);
+                throw $exception;
+            }
+
+            unset($this->listenersQueue[$index]);
+            ++$index;
+        }
+
+
+        $this->setEventQueue([]);
+        $this->setDispatching(false);
+    }
+
+
+    /**
+     * Gets the Dispatching.
+     *
+     * @return bool
+     */
+    public function isDispatching() : bool
+    {
+        return $this->dispatching;
+    }
+
+
+    /**
+     * Gets the EventQueue.
+     *
+     * @return array
+     */
+    public function getEventQueue() : array
+    {
+        return $this->eventQueue;
+    }
+
+
+    /**
+     * Gets the ListenersQueue.
+     *
+     * @return array
+     */
+    public function getListenersQueue() : array
+    {
+        return $this->listenersQueue;
     }
 
 
@@ -82,7 +161,7 @@ final class EventBus
      */
     protected function getListenerClassInstance(
         string $listenerClassName
-    ) : Listener {
+    ): Listener {
 
         try {
             $listener = new $listenerClassName;
@@ -92,41 +171,6 @@ final class EventBus
         }
         return $listener;
     }
-
-
-
-    /**
-     * Gets the Dispatching.
-     *
-     * @return bool
-     */
-    public function isDispatching()
-    {
-        return $this->dispatching;
-    }
-
-
-    /**
-     * Gets the EventQueue.
-     *
-     * @return array
-     */
-    public function getEventQueue()
-    {
-        return $this->eventQueue;
-    }
-
-
-    /**
-     * Gets the ListenersQueue.
-     *
-     * @return array
-     */
-    public function getListenersQueue()
-    {
-        return $this->listenersQueue;
-    }
-
 
 
     /**

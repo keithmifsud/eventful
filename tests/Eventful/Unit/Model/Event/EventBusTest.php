@@ -14,9 +14,14 @@
 
 namespace Eventful\Test\Unit\Model\Event;
 
+use Eventful\Test\TestCase;
 use Eventful\Event\EventBus;
 use Eventful\Event\EventSubscriber;
-use Eventful\Test\TestCase;
+use Eventful\Example\Model\ToDo\Event\ToDoWasPosted;
+use Eventful\Example\Projection\Tasks\Listener\WhenToDoIsPosted;
+use Eventful\Example\Model\ToDo\Event\ToDoDescriptionWasChanged;
+use Eventful\Example\Projection\Tasks\Listener\WhenToDoDescriptionIsChanged;
+use Eventful\Example\Projection\Calendar\Listener\WhenToDoIsPosted as CalenderToDo;
 
 
 /**
@@ -36,7 +41,7 @@ class EventBusTest extends TestCase
         $eventsWithListeners = [
             ToDoWasPosted::class => [
                 \Eventful\Example\Projection\Tasks\Listener\WhenToDoIsPosted::class,
-                \Eventful\Example\Projection\Calendar\Listener\WhenToDoIsPosted::class
+                CalenderToDo::class
             ],
 
             \Eventful\Example\Model\ToDo\Event\ToDoDescriptionWasChanged::class => [
@@ -47,7 +52,7 @@ class EventBusTest extends TestCase
         $subscriber = new EventSubscriber($eventsWithListeners);
         $bus = new EventBus($subscriber);
 
-        $bus->dispatch(new ValidEvent());
+        $bus->dispatch(new ToDoWasPosted());
 
         $this->assertTrue(empty($bus->getEventQueue()));
         $this->assertTrue(empty($bus->getListenersQueue()));
