@@ -26,7 +26,7 @@ interface Bus
      *
      * @param Event $event
      */
-    public function dispatch(Event $event) : void ;
+    public function dispatch(Event $event): void;
 
 
     /**
@@ -34,7 +34,7 @@ interface Bus
      *
      * @return bool
      */
-    public function isDispatching() : bool ;
+    public function isDispatching(): bool;
 
 
     /**
@@ -42,7 +42,7 @@ interface Bus
      *
      * @return array
      */
-    public function getEventQueue() : array ;
+    public function getEventQueue(): array;
 
 
     /**
@@ -50,5 +50,5 @@ interface Bus
      *
      * @return array
      */
-    public function getListenersQueue() : array ;
+    public function getListenersQueue(): array;
 }
