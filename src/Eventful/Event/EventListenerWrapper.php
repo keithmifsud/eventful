@@ -20,9 +20,8 @@ namespace Eventful\Event;
 /**
  * A wrapper for event listeners.
  *
- * @todo interface
  */
-final class EventListenerWrapper
+final class EventListenerWrapper implements ListenerWrapper
 {
 
     /**
@@ -57,9 +56,14 @@ final class EventListenerWrapper
     }
 
 
-    public function handle() : void
+    /**
+     * Handles the listener's tasks.
+     *
+     */
+    public function handle(): void
     {
         $this->listener->handle($this->event);
+        $this->setHandled(true);
     }
 
 

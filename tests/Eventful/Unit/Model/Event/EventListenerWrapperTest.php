@@ -32,8 +32,8 @@ class EventListenerWrapperTest extends TestCase
     public function it_is_handled()
     {
         $wrapper =  new EventListenerWrapper(
-            new ValidEvent(),
-            new ValidListener()
+            new ValidListener(),
+            new ValidEvent()
         );
 
         $wrapper->handle();
