@@ -22,7 +22,7 @@ use Eventful\Event\Subscriber;
 /**
  * Example of an event listener.
  */
-final class PostedToDoListener implements Subscriber
+final class WhenToDoIsPosted implements Subscriber
 {
 
 }

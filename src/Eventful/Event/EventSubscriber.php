@@ -28,4 +28,42 @@ final class EventSubscriber
      * @var array
      */
     protected $eventsWithListeners;
+
+
+    /**
+     * EventSubscriber constructor.
+     *
+     * @param array $eventsWithListeners
+     */
+    public function __construct(array $eventsWithListeners)
+    {
+        $this->setEventsWithListeners($eventsWithListeners);
+    }
+
+
+    /**
+     * Sets the EventsWithListeners.
+     *
+     * @param array $eventsWithListeners
+     */
+    protected function setEventsWithListeners(array $eventsWithListeners)
+    {
+        $this->eventsWithListeners = $eventsWithListeners;
+    }
+
+
+    private function isValidEvent(string $eventClass) : bool
+    {
+
+    }
+
+
+    private function isValidEventListener(string $subscriberClass) : bool
+    {
+
+    }
+
+
+
+
 }

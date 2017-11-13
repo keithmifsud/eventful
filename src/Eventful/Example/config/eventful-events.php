@@ -28,6 +28,13 @@ $eventsWithSubscribers = [
     //  Subscriber
     //]
 
+    \Eventful\Example\Model\ToDo\Event\ToDoWasPosted::class => [
+        \Eventful\Example\Projection\Tasks\Listener\WhenToDoIsPosted::class,
+        \Eventful\Example\Projection\Calendar\Listener\WhenToDoIsPosted::class
+    ],
 
-]
+    \Eventful\Example\Model\ToDo\Event\ToDoDescriptionWasChanged::class => [
+        \Eventful\Example\Projection\Tasks\Listener\WhenToDoDescriptionIsChanged::class
+    ]
+];
 
