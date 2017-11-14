@@ -21,23 +21,27 @@ The framework should not be intrusive because most projects require custom imple
 
 ## Components and features required for the initial release.
 
-- [x] Installation via Composer. #GH-2
+- [x] Installation via Composer. [GH-2](https://github.com/swellphp/eventful/issues/2)
 
-- [x] Command and Command Handling. #GH-3
+- [x] Command and Command Handling. [GH-3](https://github.com/swellphp/eventful/issues/3)
 
-- [ ] Event Bus, fire and subscribe. #GH-4
+- [x] Event Bus, subscribe and dispatch. [GH-4](https://github.com/swellphp/eventful/issues/4)
 
-- [ ] Event Store. #GH-5
+- [ ] Event Sourcing. [GH-19](https://github.com/swellphp/eventful/issues/19)
 
-- [ ] Event Sourced Infrastructure Abstractions. #GH-6
+- [ ] Event Store. [GH-5](https://github.com/swellphp/eventful/issues/5)
 
-- [ ] Read Model. # GH-7
+- [ ] Event Sourced Infrastructure Abstractions. [GH-6](https://github.com/swellphp/eventful/issues/6)
 
-- [ ] Domain Driven Design Helpers such as VOs, Aggregate and Entities. #GH-8
+- [ ] Read Model. [GH-7](https://github.com/swellphp/eventful/issues/7)
 
-- [ ] Extraction of extensible classes within the custom Model to be used as adaptors for the ability of swapping such dependencies and also adding custom code on a per project basis. #GH-9
+- [ ] Domain Driven Design Helpers such as VOs, Aggregate and Entities. [GH-8](https://github.com/swellphp/eventful/issues/8)
 
-- [ ] Online Documentation using github projects. # GH-11
+- [ ] Scenario based testing helpers. [GH-16](https://github.com/swellphp/eventful/issues/16)
+
+- [ ] Extraction of extensible classes within the custom Model to be used as adaptors for the ability of swapping such dependencies and also adding custom code on a per project basis. [GH-9](https://github.com/swellphp/eventful/issues/9)
+
+- [ ] Online Documentation using github projects. [GH-11](https://github.com/swellphp/eventful/issues/11)
 
 - [ ] Other features to be planned as we go along developing this release.
 
@@ -50,6 +54,8 @@ Via composer:
 ## Documentation
 
 - [Command Handling Documentation](https://github.com/swellphp/eventful/blob/master/src/Eventful/Command/README.md)
+
+- [Event Bus Documentation](https://github.com/swellphp/eventful/blob/master/src/Eventful/Event/README.md)
 
 Other components are in progress of being developed.
 
