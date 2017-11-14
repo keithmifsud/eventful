@@ -23,7 +23,7 @@ The framework should not be intrusive because most projects require custom imple
 
 - [x] Installation via Composer. #GH-2
 
-- [x] Commands and Command Handling. #GH-3
+- [x] Command and Command Handling. #GH-3
 
 - [ ] Event Bus, fire and subscribe. #GH-4
 

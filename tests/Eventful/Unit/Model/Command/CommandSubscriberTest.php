@@ -94,7 +94,4 @@ class CommandSubscriberTest extends TestCase
             PostTodo::class
         );
     }
-
-
-
 }

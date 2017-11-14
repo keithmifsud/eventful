@@ -22,11 +22,32 @@
 $dependencies = require __DIR__ . '/../../../../vendor/autoload.php';
 
 $configuration = [
-    'eventful-commands' => __DIR__ . '../config/eventful-commands.php'
+    'eventful_commands' => __DIR__ . '../config/eventful-commands.php',
+    'eventful_events' => __DIR__ . '../config/eventful-events.php'
 ];
 
+/**
+ * Set up the command subscriber.
+ */
 $commandSubscriber = new \Eventful\Command\CommandSubscriber(
-    $configuration['eventful-commands']
+    $configuration['eventful_commands']
 );
 
+/**
+ * Instantiate the command bus.
+ */
 $commandBus = new \Eventful\Command\CommandBus($commandSubscriber);
+
+
+/**
+ * Set up the event subscriber.
+ */
+$eventSubscriber = new \Eventful\Event\EventSubscriber(
+    $configuration['eventful_events']
+);
+
+
+/**
+ * Instantiate the event bus.
+ */
+$eventBus = new \Eventful\Event\EventBus($eventSubscriber);
