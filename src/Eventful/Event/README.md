@@ -1,4 +1,4 @@
-# Eventful - Event Components
+# Eventful - Event Component
 
 The Event Component of the Eventful DDD, CQRS & ES framework.
 

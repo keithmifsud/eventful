@@ -1,4 +1,4 @@
-# Eventful Command Component
+# Eventful - Command Component
 
 The Command component of the Eventful DDD, CQRS & ES framework.
 
