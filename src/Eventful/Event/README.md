@@ -66,11 +66,3 @@ In progress.
 
 Testing helpers will be included soon.
 
-
-
-
-
-
-
-
-## Testing
