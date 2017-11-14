@@ -41,7 +41,7 @@ The framework should not be intrusive because most projects require custom imple
 
 - [ ] Extraction of extensible classes within the custom Model to be used as adaptors for the ability of swapping such dependencies and also adding custom code on a per project basis. [GH-9](https://github.com/swellphp/eventful/issues/9)
 
-- [ ] Online Documentation using github projects. [GH-11](https://github.com/swellphp/eventful/issues/11)
+- [ ] Online Documentation using github projects. [GH-10](https://github.com/swellphp/eventful/issues/10)
 
 - [ ] Other features to be planned as we go along developing this release.
 
