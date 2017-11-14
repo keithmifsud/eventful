@@ -17,7 +17,21 @@
 namespace Eventful\Example\Model\Common\Domain\ValueObject;
 
 
-abstract class IdentifierValueObject
+use Eventful\Domain\ValueObject\ValueObject;
+use Eventful\Domain\Adaptor\UniqueIdentifier;
+use Eventful\Domain\ValueObject\BaseValueObject;
+
+
+/**
+ * An extensible identifier value object.
+ */
+class IdentifierValueObject extends BaseValueObject implements ValueObject
 {
 
+
+    public static function generate()
+    {
+        $identifier = UniqueIdentifier::generate();
+        return new self($identifier);
+    }
 }

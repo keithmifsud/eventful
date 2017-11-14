@@ -25,6 +25,13 @@ abstract class BaseValueObject
 {
 
     /**
+     * @var ValueObject
+     */
+    protected $value;
+
+
+
+    /**
      * Gets the value of the object.
      *
      * @return ValueObject
@@ -45,4 +52,16 @@ abstract class BaseValueObject
     {
         return $this->getValue() === $other->getValue();
     }
+
+
+    /**
+     * Sets the Value.
+     *
+     * @param ValueObject $value
+     */
+    protected function setValue($value)
+    {
+        $this->value = $value;
+    }
+
 }

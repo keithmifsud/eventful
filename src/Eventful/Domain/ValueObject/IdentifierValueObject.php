@@ -16,6 +16,9 @@
 
 namespace Eventful\Domain\ValueObject;
 
+use Eventful\Domain\Adaptor\UniqueIdentifier;
+use Eventful\Domain\Exception\InvalidArgument;
+
 
 /**
  * An extensible identifier value object.
@@ -23,31 +26,59 @@ namespace Eventful\Domain\ValueObject;
 class IdentifierValueObject extends BaseValueObject implements ValueObject
 {
 
+
     /**
-     * @var IdentifierValueObject
+     * Generates a new identifier.
+     *
+     * @return IdentifierValueObject
      */
-    protected $value;
+    public static function generate(): IdentifierValueObject
+    {
+        $identifier = UniqueIdentifier::generate();
+        return new self($identifier);
+    }
+
+
+    /**
+     * Generates an identifier from string.
+     *
+     * @param string $identifier
+     * @return IdentifierValueObject
+     * @throws InvalidArgument
+     */
+    public static function fromString(
+        string $identifier
+    ): IdentifierValueObject {
+
+        try {
+            $identifierObject = UniqueIdentifier::fromString($identifier);
+        } catch (\Exception $exception) {
+            throw new InvalidArgument($exception->getMessage());
+        }
+        return new self(
+            $identifierObject
+        );
+    }
+
+
+    /**
+     * Gets the identifier's string.
+     *
+     * @return string
+     */
+    public function toString(): string
+    {
+        return $this->value->toString();
+    }
 
 
     /**
      * IdentifierValueObject constructor.
      *
-     * @param IdentifierValueObject $identifierValueObject
+     * @param $identifierValueObject
      */
-    protected function __construct(IdentifierValueObject $identifierValueObject)
+    protected function __construct($identifierValueObject)
     {
         $this->setValue($identifierValueObject);
     }
-
-
-    /**
-     * Sets the Value.
-     *
-     * @param IdentifierValueObject $value
-     */
-    protected function setValue(IdentifierValueObject $value)
-    {
-        $this->value = $value;
-    }
-
 }
