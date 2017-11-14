@@ -20,12 +20,18 @@ namespace Eventful\Example\Model\ToDo;
 /**
  * Simple example aggregate root.
  *
- * A todo is simply a task which needs to be done.
+ * A to do is simply a task which needs to be done.
  * It has a description of what needs doing and a status of either open or done.
  *
  */
-class ToDo
+final class ToDo
 {
+
+    /**
+     * @var string
+     */
+    protected $identifier;
+
 
     /**
      * @var string
@@ -40,7 +46,7 @@ class ToDo
 
 
     /**
-     * Posts a new todo.
+     * Posts a new to do.
      *
      * @param string $description
      * @return ToDo

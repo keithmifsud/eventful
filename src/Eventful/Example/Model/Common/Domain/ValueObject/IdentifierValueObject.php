@@ -14,17 +14,10 @@
  */
 
 
-namespace Eventful\Example\Model\ToDo\Event;
+namespace Eventful\Example\Model\Common\Domain\ValueObject;
 
 
-use Eventful\Event\Event;
-
-
-/**
- * Example class for an event.
- */
-final class ToDoWasPosted implements Event
+abstract class IdentifierValueObject
 {
 
-    pro
 }
