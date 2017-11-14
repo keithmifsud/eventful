@@ -77,7 +77,7 @@ final class UniqueIdentifier implements
      *
      * @return UniqueIdentifier
      */
-    public function getIdentifier()
+    public function getIdentifier() : UniqueIdentifier
     {
         return $this->identifier;
     }

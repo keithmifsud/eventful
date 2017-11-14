@@ -46,4 +46,12 @@ interface UniqueIdentifierAdaptorContract
      * @return string
      */
     public function toString() : string ;
+
+
+    /**
+     * Gets the identifier.
+     *
+     * @return UniqueIdentifier
+     */
+    public function getIdentifier() : UniqueIdentifier ;
 }
