@@ -18,4 +18,37 @@ Handles the publishing of events to it's listeners and calls the handle method.
 
 ## Usage Examples
 
+A simple "ToDo" model is included in this package to outline how to:
+
+__Create an Event__
+
+_Similar to:_
+
+[ToDoWasPosted](https://github.com/swellphp/eventful/blob/master/src/Eventful/Example/Model/ToDo/Event/ToDoWasPosted.php)
+
+and
+
+[ToDoWasDescriptionWasChanged](https://github.com/swellphp/eventful/blob/master/src/Eventful/Example/Model/ToDo/Event/ToDoDescriptionWasChanged.php)
+
+__Create an Event Listener__
+
+_Similar to:_
+
+[WhenToDoIsPosted](https://github.com/swellphp/eventful/blob/master/src/Eventful/Example/Projection/Tasks/Listener/WhenToDoIsPosted.php)
+
+and
+
+[WhenToDoDescriptionIsChanged](https://github.com/swellphp/eventful/blob/master/src/Eventful/Example/Projection/Tasks/Listener/WhenToDoDescriptionIsChanged.php)
+
+and
+
+[WhenToDoIsPosted](https://github.com/swellphp/eventful/blob/master/src/Eventful/Example/Projection/Calendar/Listener/WhenToDoIsPosted.php)
+
+
+
+
+
+
+
+
 ## Testing
