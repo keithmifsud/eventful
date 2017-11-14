@@ -76,6 +76,6 @@ class UniqueIdentifierTest extends TestCase
         $this->assertTrue(
             is_string(UniqueIdentifier::generate()->toString())
         );
-
     }
+
 }

@@ -25,7 +25,7 @@ abstract class BaseValueObject
 {
 
     /**
-     * @var ValueObject
+     * @var mixed
      */
     protected $value;
 
@@ -34,9 +34,9 @@ abstract class BaseValueObject
     /**
      * Gets the value of the object.
      *
-     * @return ValueObject
+     * @return mixed
      */
-    public function getValue() : ValueObject
+    public function getValue()
     {
         return $this->value;
     }
@@ -50,14 +50,14 @@ abstract class BaseValueObject
      */
     public function sameValueAs(ValueObject $other) : bool
     {
-        return $this->getValue() === $other->getValue();
+        return $this->getValue() == $other->getValue();
     }
 
 
     /**
      * Sets the Value.
      *
-     * @param ValueObject $value
+     * @param mixed $value
      */
     protected function setValue($value)
     {

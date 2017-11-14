@@ -26,9 +26,9 @@ interface ValueObject
     /**
      * Gets the value of the object.
      *
-     * @return ValueObject
+     * @return mixed
      */
-    public function getValue() : ValueObject ;
+    public function getValue();
 
 
 

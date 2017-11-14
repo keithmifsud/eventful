@@ -95,4 +95,38 @@ class IdentifierValueObjectTest extends TestCase
             is_string($identifier->toString())
         );
     }
+
+
+    /**
+     * Tests that it knows when comparing a different identifier.
+     *
+     * @test
+     */
+    public function it_knows_when_a_compared_identifier_has_a_different_value()
+    {
+        $original = IdentifierValueObject::generate();
+        $compare = IdentifierValueObject::generate();
+
+        $this->assertFalse(
+            $original->sameValueAs($compare)
+        );
+    }
+
+
+    /**
+     * Tests that it knows when comparing an identifier of the same value.
+     *
+     * @test
+     */
+    public function it_knows_when_another_identifier_has_the_same_value()
+    {
+        $original = IdentifierValueObject::generate();
+        $compare = IdentifierValueObject::fromString(
+            $original->toString()
+        );
+
+        $this->assertTrue(
+            $original->sameValueAs($compare)
+        );
+    }
 }
