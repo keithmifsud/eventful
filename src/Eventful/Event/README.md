@@ -34,15 +34,37 @@ __Create an Event Listener__
 
 _Similar to:_
 
-[WhenToDoIsPosted](https://github.com/swellphp/eventful/blob/master/src/Eventful/Example/Projection/Tasks/Listener/WhenToDoIsPosted.php)
+[WhenToDoWasPosted](https://github.com/swellphp/eventful/blob/master/src/Eventful/Example/Projection/Tasks/Listener/WhenToDoWasPosted.php)
 
 and
 
-[WhenToDoDescriptionIsChanged](https://github.com/swellphp/eventful/blob/master/src/Eventful/Example/Projection/Tasks/Listener/WhenToDoDescriptionIsChanged.php)
+[WhenToDoDescriptionWasChanged](https://github.com/swellphp/eventful/blob/master/src/Eventful/Example/Projection/Tasks/Listener/WhenToDoDescriptionWasChanged.php)
 
 and
 
-[WhenToDoIsPosted](https://github.com/swellphp/eventful/blob/master/src/Eventful/Example/Projection/Calendar/Listener/WhenToDoIsPosted.php)
+[WhenToDoWasPosted](https://github.com/swellphp/eventful/blob/master/src/Eventful/Example/Projection/Calendar/Listener/WhenToDoWasPosted.php)
+
+__Dispatch the event__
+
+Depending on your application structure / framework, instantiate the `\Eventful\Event\EventSubscriber` with an array of events and listeners.
+
+_Similar to:_
+
+[Array of events with listeners](https://github.com/swellphp/eventful/blob/master/src/Eventful/Example/config/eventful-events.php)
+
+Then instantiate the `\Eventful\Event\EventBus` by passing the `\Eventful\Event\EventSubscriber` to it.
+
+_Similar to:_
+
+[Bootstrap](https://github.com/swellphp/eventful/blob/master/src/Eventful/Example/app/bootstrap.php)
+
+### Usage from model's Aggregates and Entities
+
+In progress.
+
+## Testing
+
+Testing helpers will be included soon.
 
 
 
