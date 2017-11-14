@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+
 /**
  * This file is part of Eventful
  *
@@ -15,34 +16,38 @@
 
 namespace Eventful\Domain\ValueObject;
 
+
 /**
- * A contract for an unique identifier.
- *
+ * An extensible identifier value object.
  */
-interface IdentifierValueObject
+class IdentifierValueObject extends BaseValueObject implements ValueObject
 {
 
     /**
-     * Generates a new unique identifier.
-     *
-     * @return IdentifierValueObject
+     * @var IdentifierValueObject
      */
-    public function generate() : IdentifierValueObject ;
+    protected $value;
 
 
     /**
-     * Gets an unique identifier from string.
+     * IdentifierValueObject constructor.
      *
-     * @param string $identifier
-     * @return IdentifierValueObject
+     * @param IdentifierValueObject $identifierValueObject
      */
-    public static function fromString(string $identifier) : IdentifierValueObject ;
+    protected function __construct(IdentifierValueObject $identifierValueObject)
+    {
+        $this->setValue($identifierValueObject);
+    }
 
 
     /**
-     * Gets the unique identifier's string.
+     * Sets the Value.
      *
-     * @return string
+     * @param IdentifierValueObject $value
      */
-    public function toString() : string ;
+    protected function setValue(IdentifierValueObject $value)
+    {
+        $this->value = $value;
+    }
+
 }

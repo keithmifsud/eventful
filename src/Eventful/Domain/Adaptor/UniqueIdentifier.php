@@ -16,10 +16,9 @@
 
 namespace Eventful\Domain\Adaptor;
 
-use Eventful\Domain\ValueObject\IdentifierValueObject;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
-
+use Eventful\Domain\ValueObject\IdentifierValueObject;
 
 /**
  * The unique identifier generator's adaptor.
@@ -28,7 +27,6 @@ use Ramsey\Uuid\UuidInterface;
 final class UniqueIdentifier implements
     UniqueIdentifierAdaptorContract
 {
-
 
     /**
      * @var UniqueIdentifier
@@ -41,7 +39,7 @@ final class UniqueIdentifier implements
      *
      * @return UniqueIdentifier
      */
-    public static function generate() : UniqueIdentifier
+    public static function generate(): UniqueIdentifier
     {
         $identifier = new self(Uuid::uuid4());
         return $identifier;
@@ -54,7 +52,7 @@ final class UniqueIdentifier implements
      * @param string $identifier
      * @return UniqueIdentifier
      */
-    public static function fromString(string $identifier) : UniqueIdentifier
+    public static function fromString(string $identifier): UniqueIdentifier
     {
         $identifierClass = new self(Uuid::fromString($identifier));
         return $identifierClass;
@@ -66,7 +64,7 @@ final class UniqueIdentifier implements
      *
      * @return string
      */
-    public function toString() : string
+    public function toString(): string
     {
         return $this->identifier->toString();
     }
@@ -77,7 +75,7 @@ final class UniqueIdentifier implements
      *
      * @return UniqueIdentifier
      */
-    public function getIdentifier() : UniqueIdentifier
+    public function getIdentifier(): UniqueIdentifier
     {
         return $this->identifier;
     }
@@ -90,17 +88,16 @@ final class UniqueIdentifier implements
      */
     protected function __construct(UuidInterface $identifier)
     {
-        $this->setIdentifier($this->identifier);
+        $this->setIdentifier($identifier);
     }
-
 
 
     /**
      * Sets the Identifier.
      *
-     * @param UniqueIdentifier $identifier
+     * @param UuidInterface $identifier
      */
-    protected function setIdentifier(UniqueIdentifier $identifier)
+    protected function setIdentifier(UuidInterface $identifier)
     {
         $this->identifier = $identifier;
     }

@@ -26,5 +26,5 @@ use Eventful\Event\Event;
 final class ToDoWasPosted implements Event
 {
 
-    pro
+
 }
