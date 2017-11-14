@@ -18,10 +18,10 @@ use Eventful\Test\TestCase;
 use Eventful\Event\EventBus;
 use Eventful\Event\EventSubscriber;
 use Eventful\Example\Model\ToDo\Event\ToDoWasPosted;
-use Eventful\Example\Projection\Tasks\Listener\WhenToDoIsPosted;
+use Eventful\Example\Projection\Tasks\Listener\WhenToDoWasPosted;
 use Eventful\Example\Model\ToDo\Event\ToDoDescriptionWasChanged;
-use Eventful\Example\Projection\Tasks\Listener\WhenToDoDescriptionIsChanged;
-use Eventful\Example\Projection\Calendar\Listener\WhenToDoIsPosted as CalenderToDo;
+use Eventful\Example\Projection\Tasks\Listener\WhenToDoDescriptionWasChanged;
+use Eventful\Example\Projection\Calendar\Listener\WhenToDoWasPosted as CalenderToDo;
 
 
 /**
@@ -40,12 +40,12 @@ class EventBusTest extends TestCase
     {
         $eventsWithListeners = [
             ToDoWasPosted::class => [
-                \Eventful\Example\Projection\Tasks\Listener\WhenToDoIsPosted::class,
+                \Eventful\Example\Projection\Tasks\Listener\WhenToDoWasPosted::class,
                 CalenderToDo::class
             ],
 
             \Eventful\Example\Model\ToDo\Event\ToDoDescriptionWasChanged::class => [
-                \Eventful\Example\Projection\Tasks\Listener\WhenToDoDescriptionIsChanged::class
+                \Eventful\Example\Projection\Tasks\Listener\WhenToDoDescriptionWasChanged::class
             ]
         ];
 

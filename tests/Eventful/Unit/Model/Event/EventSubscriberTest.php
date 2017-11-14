@@ -95,12 +95,12 @@ class EventSubscriberTest extends TestCase
     {
         $eventsWithListeners = [
             ToDoWasPosted::class => [
-                \Eventful\Example\Projection\Tasks\Listener\WhenToDoIsPosted::class,
-                \Eventful\Example\Projection\Calendar\Listener\WhenToDoIsPosted::class
+                \Eventful\Example\Projection\Tasks\Listener\WhenToDoWasPosted::class,
+                \Eventful\Example\Projection\Calendar\Listener\WhenToDoWasPosted::class
             ],
 
             \Eventful\Example\Model\ToDo\Event\ToDoDescriptionWasChanged::class => [
-                \Eventful\Example\Projection\Tasks\Listener\WhenToDoDescriptionIsChanged::class
+                \Eventful\Example\Projection\Tasks\Listener\WhenToDoDescriptionWasChanged::class
             ]
         ];
         $subscriber = new EventSubscriber($eventsWithListeners);
@@ -125,12 +125,12 @@ class EventSubscriberTest extends TestCase
     {
         $eventsWithListeners = [
             ToDoWasPosted::class => [
-                \Eventful\Example\Projection\Tasks\Listener\WhenToDoIsPosted::class,
-                \Eventful\Example\Projection\Calendar\Listener\WhenToDoIsPosted::class
+                \Eventful\Example\Projection\Tasks\Listener\WhenToDoWasPosted::class,
+                \Eventful\Example\Projection\Calendar\Listener\WhenToDoWasPosted::class
             ],
 
             \Eventful\Example\Model\ToDo\Event\ToDoDescriptionWasChanged::class => [
-                \Eventful\Example\Projection\Tasks\Listener\WhenToDoDescriptionIsChanged::class
+                \Eventful\Example\Projection\Tasks\Listener\WhenToDoDescriptionWasChanged::class
             ]
         ];
         $subscriber = new EventSubscriber($eventsWithListeners);

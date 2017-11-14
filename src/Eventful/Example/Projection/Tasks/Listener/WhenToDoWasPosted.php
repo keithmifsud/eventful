@@ -20,12 +20,10 @@ namespace Eventful\Example\Projection\Tasks\Listener;
 use Eventful\Event\Event;
 use Eventful\Event\Listener;
 
-
 /**
- * An example event listener for when a to do description is changed.
- *
+ * Example of an event listener.
  */
-final class WhenToDoDescriptionIsChanged implements Listener
+final class WhenToDoWasPosted implements Listener
 {
 
     /**

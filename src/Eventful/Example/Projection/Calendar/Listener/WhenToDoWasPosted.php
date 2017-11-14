@@ -14,16 +14,17 @@
  */
 
 
-namespace Eventful\Example\Projection\Tasks\Listener;
+namespace Eventful\Example\Projection\Calendar\Listener;
 
 
 use Eventful\Event\Event;
 use Eventful\Event\Listener;
 
+
 /**
- * Example of an event listener.
+ * An example event listener for when a to do is posted.
  */
-final class WhenToDoIsPosted implements Listener
+final class WhenToDoWasPosted implements Listener
 {
 
     /**
