@@ -18,7 +18,7 @@ namespace Eventful\Example\Model\Common\Domain\ValueObject;
 
 
 use Eventful\Domain\ValueObject\ValueObject;
-use Eventful\Domain\Adaptor\UniqueIdentifier;
+use Eventful\Common\Adaptor\UniqueIdentifier;
 use Eventful\Domain\ValueObject\BaseValueObject;
 
 

@@ -13,8 +13,9 @@
  */
 
 
-namespace Eventful\Domain\Adaptor;
+namespace Eventful\Common\Adaptor;
 
+use Eventful\Common\Adaptor\UniqueIdentifier;
 use Eventful\Domain\ValueObject\IdentifierValueObject;
 
 /**

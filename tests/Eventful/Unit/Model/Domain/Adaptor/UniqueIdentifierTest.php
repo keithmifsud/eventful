@@ -16,8 +16,8 @@ namespace Eventful\Test\Unit\Model\Domain\Adaptor;
 
 
 use Eventful\Test\TestCase;
-use Eventful\Domain\Adaptor\UniqueIdentifier;
-use Eventful\Domain\Adaptor\UniqueIdentifierAdaptorContract;
+use Eventful\Common\Adaptor\UniqueIdentifier;
+use Eventful\Common\Adaptor\UniqueIdentifierAdaptorContract;
 
 
 /**
@@ -34,7 +34,7 @@ class UniqueIdentifierTest extends TestCase
      */
     public function it_implements_the_adaptor_interface()
     {
-        $adaptor = UniqueIdentifier::generate();
+        $adaptor = \Eventful\Common\Adaptor\UniqueIdentifier::generate();
         $this->assertInstanceOf(UniqueIdentifierAdaptorContract::class,
             $adaptor);
     }
@@ -47,8 +47,8 @@ class UniqueIdentifierTest extends TestCase
      */
     public function it_generates_a_new_identifier()
     {
-        $identifier = UniqueIdentifier::generate();
-        $this->assertInstanceOf(UniqueIdentifier::class, $identifier);
+        $identifier = \Eventful\Common\Adaptor\UniqueIdentifier::generate();
+        $this->assertInstanceOf(\Eventful\Common\Adaptor\UniqueIdentifier::class, $identifier);
     }
 
 
@@ -60,8 +60,8 @@ class UniqueIdentifierTest extends TestCase
      */
     public function it_can_get_an_identifier_from_string()
     {
-        $identifier = UniqueIdentifier::generate();
-        $fromString = UniqueIdentifier::fromString($identifier->toString());
+        $identifier = \Eventful\Common\Adaptor\UniqueIdentifier::generate();
+        $fromString = \Eventful\Common\Adaptor\UniqueIdentifier::fromString($identifier->toString());
         $this->assertEquals($identifier, $fromString);
     }
 
@@ -74,7 +74,7 @@ class UniqueIdentifierTest extends TestCase
     public function it_can_get_the_string()
     {
         $this->assertTrue(
-            is_string(UniqueIdentifier::generate()->toString())
+            is_string(\Eventful\Common\Adaptor\UniqueIdentifier::generate()->toString())
         );
     }
 

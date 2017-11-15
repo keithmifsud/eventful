@@ -16,7 +16,7 @@
 
 namespace Eventful\Domain\ValueObject;
 
-use Eventful\Domain\Adaptor\UniqueIdentifier;
+use Eventful\Common\Adaptor\UniqueIdentifier;
 use Eventful\Domain\Exception\InvalidArgument;
 
 

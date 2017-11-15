@@ -14,8 +14,9 @@
  */
 
 
-namespace Eventful\Domain\Adaptor;
+namespace Eventful\Common\Adaptor;
 
+use Eventful\Common\Adaptor\UniqueIdentifierAdaptorContract;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 use Eventful\Domain\ValueObject\IdentifierValueObject;

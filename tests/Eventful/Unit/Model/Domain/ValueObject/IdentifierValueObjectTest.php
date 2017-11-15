@@ -14,7 +14,7 @@
 
 namespace Eventful\Test\Unit\Model\Domain\ValueObject;
 
-use Eventful\Domain\Adaptor\UniqueIdentifier;
+use Eventful\Common\Adaptor\UniqueIdentifier;
 use Eventful\Domain\Exception\InvalidArgument;
 use Eventful\Domain\ValueObject\IdentifierValueObject;
 use Eventful\Domain\ValueObject\ValueObject;

@@ -36,6 +36,11 @@ class StringValueObject extends BaseValueObject implements ValueObject
     }
 
 
+    /**
+     * Gets the string value.
+     *
+     * @return string
+     */
     public function toString() : string
     {
         return (string) $this->getValue();
