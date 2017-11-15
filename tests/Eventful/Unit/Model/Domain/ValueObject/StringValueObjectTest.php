@@ -84,11 +84,11 @@ class StringValueObjectTest extends TestCase
     }
 
     /**
-     * Tests that it knows when comparing a different identifier.
+     * Tests that it knows when comparing a different string.
      *
      * @test
      */
-    public function it_knows_when_a_compared_identifier_has_a_different_value()
+    public function it_knows_when_a_compared_string_has_a_different_value()
     {
         $original = new StringValueObject('some string');
         $compare = new StringValueObject('different string');
@@ -100,11 +100,11 @@ class StringValueObjectTest extends TestCase
 
 
     /**
-     * Tests that it knows when comparing an identifier of the same value.
+     * Tests that it knows when comparing an string of the same value.
      *
      * @test
      */
-    public function it_knows_when_another_identifier_has_the_same_value()
+    public function it_knows_when_another_string_has_the_same_value()
     {
         $original = new StringValueObject('a string');
         $compare = new StringValueObject('a string');
