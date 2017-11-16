@@ -61,8 +61,12 @@ class DoubleValueObject extends BaseValueObject implements ValueObject
      */
     private function isValidDouble($value): bool
     {
-        if ((is_double($value)) && (!preg_match('/\.[0-9]{2,}[1-9][0-9]*$/',
-                    (string)$value) > 0)) {
+        if ((is_double($value)) &&
+            (!preg_match(
+                '/\.[0-9]{2,}[1-9][0-9]*$/',
+                    (string)$value) > 0
+            )
+        ) {
             return true;
         }
         return false;
