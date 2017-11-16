@@ -14,7 +14,7 @@
 
 namespace Eventful\Test\Unit\Model\Domain\ValueObject;
 
-use Eventful\Domain\Exception\InvalidString;
+use Eventful\Domain\Exception\NotString;
 use Eventful\Domain\ValueObject\StringValueObject;
 use Eventful\Domain\ValueObject\ValueObject;
 use Eventful\Test\TestCase;
@@ -58,16 +58,63 @@ class StringValueObjectTest extends TestCase
 
 
     /**
-     * It throws an exception when passing an invalid argument.
+     * It throws an exception when passing an array.
      *
      * @test
-     * @expectedException \TypeError
+     * @expectedException \Eventful\Domain\Exception\NotString
      */
-    public function it_throws_exception_when_not_initiated_with_a_invalid_string()
+    public function it_throws_exception_when_not_initiated_with_an_array()
     {
         $object = new StringValueObject([]);
     }
 
+
+    /**
+     * It throws exception when instantiated with an integer.
+     *
+     * @test
+     * @expectedException \Eventful\Domain\Exception\NotString
+     */
+    public function it_throws_exception_when_instantiated_from_an_integer()
+    {
+        $stringValueObject = new StringValueObject(100);
+    }
+
+
+    /**
+     * It throws exception when instantiated with a float.
+     *
+     * @test
+     * @expectedException \Eventful\Domain\Exception\NotString
+     */
+    public function it_throws_exception_when_instantiated_from_a_float()
+    {
+        $stringValueObject = new StringValueObject(1.9999);
+    }
+
+
+    /**
+     * It throws exception when instantiated with an object.
+     *
+     * @test
+     * @expectedException \Eventful\Domain\Exception\NotString
+     */
+    public function it_throws_exception_when_instantiated_from_an_object()
+    {
+        $stringValueObject = new StringValueObject((object) []);
+    }
+
+
+    /**
+     * It throws exception when instantiated with a null value.
+     *
+     * @test
+     * @expectedException \Eventful\Domain\Exception\NotString
+     */
+    public function it_throws_exception_when_instantiated_from_null()
+    {
+        $stringValueObject = new StringValueObject(null);
+    }
 
     /**
      * Tests that it can get the string.
@@ -82,6 +129,7 @@ class StringValueObjectTest extends TestCase
             is_string($object->getValue())
         );
     }
+
 
     /**
      * Tests that it knows when comparing a different string.

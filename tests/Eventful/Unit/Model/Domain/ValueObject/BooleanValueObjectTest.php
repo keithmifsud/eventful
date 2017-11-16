@@ -196,7 +196,7 @@ class BooleanValueObjectTest extends TestCase
     {
         $original = new BooleanValueObject(true);
         $compare = new BooleanValueObject(false);
-
+        
         $this->assertFalse(
             $original->sameValueAs($compare)
         );

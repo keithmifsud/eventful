@@ -23,7 +23,7 @@ use Eventful\Common\Exception\Exception;
 /**
  * Exception for an invalid string.
  */
-final class InvalidString extends Exception
+final class NotString extends Exception
 {
 
 }
