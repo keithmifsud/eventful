@@ -14,11 +14,10 @@
 
 namespace Eventful\Test\Unit\Model\Domain\ValueObject;
 
-use Eventful\Domain\Exception\NotInteger;
-use Eventful\Domain\ValueObject\IntegerValueObject;
-use Eventful\Domain\ValueObject\ValueObject;
 use Eventful\Test\TestCase;
-
+use Eventful\Domain\Exception\NotInteger;
+use Eventful\Domain\ValueObject\ValueObject;
+use Eventful\Domain\ValueObject\IntegerValueObject;
 
 /**
  * Tests for the integer value object.
@@ -62,7 +61,7 @@ class IntegerValueObjectTest extends TestCase
      *
      * @test
      */
-    public function it_can_get_the_correct_value()
+    public function it_can_get_the_correct_value_and_type()
     {
         $integerValueObject = new IntegerValueObject(300);
         $this->assertTrue(is_int($integerValueObject->getValue()));
