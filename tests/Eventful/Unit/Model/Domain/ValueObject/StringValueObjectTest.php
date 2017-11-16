@@ -101,7 +101,7 @@ class StringValueObjectTest extends TestCase
      */
     public function it_throws_exception_when_instantiated_from_an_object()
     {
-        $stringValueObject = new StringValueObject((object) []);
+        $stringValueObject = new StringValueObject((object)[]);
     }
 
 
@@ -116,6 +116,7 @@ class StringValueObjectTest extends TestCase
         $stringValueObject = new StringValueObject(null);
     }
 
+
     /**
      * Tests that it can get the string.
      *
@@ -126,7 +127,7 @@ class StringValueObjectTest extends TestCase
         $string = 'some text';
         $object = new StringValueObject($string);
         $this->assertTrue(
-            is_string($object->getValue())
+            is_string($object->toString())
         );
     }
 
