@@ -63,7 +63,7 @@ class StringValueObjectTest extends TestCase
      * @test
      * @expectedException \TypeError
      */
-    public function it_throws_exception_when_not_initiated_with_a_valid_string()
+    public function it_throws_exception_when_not_initiated_with_a_invalid_string()
     {
         $object = new StringValueObject([]);
     }
