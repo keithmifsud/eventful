@@ -66,15 +66,15 @@ class CommonModel extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeIn("Generating the common model files ...");
-        $output->writeIn("To this location: ");
-        $output->writeIn(
+        $output->writeln("Generating the common model files ...");
+        $output->writeln("To this location: ");
+        $output->writeln(
             $input->getArgument('destination_directory')
         );
-        $output->writeIn("With this namespace: ");
+        $output->writeln("With this namespace: ");
         $output->writeln(
             $input->getArgument('namespace')
         );
-        
+
     }
 }
