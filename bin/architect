@@ -20,4 +20,5 @@ use \Eventful\Architect\Application\Application;
 $rootDir = getcwd();
 $app = new Application($rootDir, 'Architect Console Application',
 '@package_version@');
+$app->add(new \Eventful\Architect\Command\Generate\CommonModel());
 $app->run();
