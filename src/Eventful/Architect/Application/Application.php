@@ -16,8 +16,13 @@
 
 namespace Eventful\Architect\Application;
 
+use \Symfony\Component\Console\Application as ConsoleApplication;
 
-class Application extends \Symfony\Component\Console\Application
+/**
+ * The console application.
+ */
+final class Application extends ConsoleApplication
 {
+
 
 }
