@@ -39,4 +39,15 @@ class EnumValueObject extends Enumerator implements ValueObject
         return $this->getValue() == $other->getValue();
     }
 
+
+    /**
+     * Sets the value of the object.
+     *
+     * @param mixed $value
+     */
+    protected function setValue($value) : void
+    {
+        $this->value = $value;
+    }
+
 }

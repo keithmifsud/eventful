@@ -16,6 +16,7 @@ namespace Eventful\Test\Unit\Model\Domain\ValueObject;
 
 use Eventful\Test\TestCase;
 use Eventful\Domain\ValueObject\ValueObject;
+use Eventful\Domain\Exception\InvalidCurrencyCode;
 use Eventful\Common\Exception\UndefinedEnumeratorValue;
 use Eventful\Domain\ValueObject\CurrencyCodeValueObject;
 
@@ -61,11 +62,57 @@ class CurrencyCodeValueObjectTest extends TestCase
      * currency code.
      *
      * @test
-     * @expectedException UndefinedEnumeratorValue
+     * @expectedException \Eventful\Domain\Exception\InvalidCurrencyCode
      */
     public function it_throws_exception_when_instantiated_from_an_invalid_code()
     {
         $invalidCode = new CurrencyCodeValueObject('INV');
+    }
+
+
+    /**
+     * Tests that it can get the correct value of the code.
+     *
+     * @test
+     */
+    public function it_can_get_the_correct_value()
+    {
+        $currencyCodeValueObject = new CurrencyCodeValueObject('USD');
+        $this->assertEquals(
+            'USD',
+            $currencyCodeValueObject->getValue()
+        );
+    }
+
+
+    /**
+     * Tests that it knows another object is of the same value when compared.
+     *
+     * @test
+     */
+    public function it_knows_when_compared_to_an_object_of_the_value()
+    {
+        $original = new CurrencyCodeValueObject('NPR');
+        $sameValue = new CurrencyCodeValueObject('NPR');
+
+        $this->assertTrue($original->sameValueAs($sameValue));
+        $this->assertTrue($sameValue->sameValueAs($original));
+    }
+
+
+    /**
+     * Tests that it knows another object has a different value
+     * when compared.
+     *
+     * @test
+     */
+    public function it_knows_when_compared_to_an_object_if_different_value()
+    {
+        $original = new CurrencyCodeValueObject('AED');
+        $differentValue = new CurrencyCodeValueObject('YER');
+
+        $this->assertFalse($original->sameValueAs($differentValue));
+        $this->assertFalse($differentValue->sameValueAs($original));
     }
 }
 

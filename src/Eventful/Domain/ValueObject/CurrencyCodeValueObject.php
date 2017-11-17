@@ -16,6 +16,9 @@
 
 namespace Eventful\Domain\ValueObject;
 
+use Eventful\Domain\Exception\InvalidCurrencyCode;
+use Eventful\Common\Exception\UndefinedEnumeratorValue;
+
 /**
  * An extensible currency code enumarated value object.
  */
@@ -500,4 +503,20 @@ class CurrencyCodeValueObject extends EnumValueObject implements ValueObject
 
 
     const ZWL = 'ZWL';
+
+
+    /**
+     * CurrencyCodeValueObject constructor.
+     *
+     * @param string $code
+     * @throws InvalidCurrencyCode
+     */
+    public function __construct(string $code)
+    {
+        try {
+            parent::__construct($code);
+        } catch (UndefinedEnumeratorValue $exception) {
+            throw new InvalidCurrencyCode();
+        }
+    }
 }
