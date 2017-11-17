@@ -17,7 +17,9 @@
 namespace Eventful\Architect\Command\Generate;
 
 
+use function Sodium\increment;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -30,6 +32,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 class CommonModel extends Command
 {
 
+    /**
+     * Configures the command.
+     */
     protected function configure()
     {
         $this->setName('generate:common-model');
@@ -37,11 +42,39 @@ class CommonModel extends Command
         $this->setHelp(
             'This command allows you to generate the common model files into your own domain model.'
         );
+
+        $this->addArgument(
+            'destination_directory',
+            InputArgument::REQUIRED,
+            'Where would you like these files to be copied to?'
+        );
+
+        $this->addArgument(
+            'namespace',
+            InputArgument::REQUIRED,
+            'What is the name space of the common model?'
+        );
     }
 
 
+    /**
+     * Executes the command.
+     *
+     * @param InputInterface  $input
+     * @param OutputInterface $output
+     * @return null|int
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->write("starting ...");
+        $output->writeIn("Generating the common model files ...");
+        $output->writeIn("To this location: ");
+        $output->writeIn(
+            $input->getArgument('destination_directory')
+        );
+        $output->writeIn("With this namespace: ");
+        $output->writeln(
+            $input->getArgument('namespace')
+        );
+        
     }
 }
